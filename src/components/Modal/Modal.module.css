@@ -1,0 +1,63 @@
+.modalContent {
+  z-index: 10;
+}
+
+.modalSurrounding {
+  z-index: 5;
+}
+
+.cancel {
+  color: rgb(185, 185, 185);
+}
+
+.confirm {
+  color: rgb(51, 221, 136);
+}
+
+.cancel,
+.confirm {
+  border: none;
+  background: none;
+  font-weight: bold;
+}
+
+.input input {
+  background-color: rgb(247, 247, 247);
+  font-size: smaller;
+  border-radius: 1%;
+  border: none;
+  padding: 2%;
+  margin: 0%;
+}
+
+.input input:focus {
+  outline: none;
+}
+
+.smallInput input {
+  padding: 8%;
+  width: 100%;
+}
+
+.input label {
+  height: 20%;
+  font-size: smaller;
+  font-weight: bold;
+  color: rgb(243, 106, 106);
+  margin-left: 1%;
+}
+
+.checkCustom {
+  width: 8% !important;
+  border: 1px solid rgb(180, 180, 180) !important;
+}
+
+.checkCustom:checked {
+  background-color: rgb(51, 221, 136) !important;
+  border-color: rgb(39, 207, 123) !important;
+}
+
+.textCustom {
+  font-weight: normal !important;
+  color: black !important;
+}
