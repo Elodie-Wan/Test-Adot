@@ -53,6 +53,10 @@ const Modal: FC<ModalProps> = ({ setOpenModal }) => {
     mode: "onChange",
   });
 
+  const setCloseModal = () => {
+    setOpenModal(false);
+  };
+
   const onSubmit = (data: CardProps) => {
     const places: { [key: string]: CardProps } = JSON.parse(
       localStorage.getItem("places") as string
@@ -62,7 +66,7 @@ const Modal: FC<ModalProps> = ({ setOpenModal }) => {
       JSON.stringify({ ...places, [data.name]: data })
     );
     setPlaces?.({ ...places, [data.name]: data });
-    setOpenModal(false);
+    setCloseModal();
   };
 
   return (
@@ -72,9 +76,7 @@ const Modal: FC<ModalProps> = ({ setOpenModal }) => {
     >
       <div
         className="position-absolute bg-dark opacity-50 w-100 h-100 start-0 top-0"
-        onClick={() => {
-          setOpenModal(false);
-        }}
+        onClick={setCloseModal}
       ></div>
       <div
         className={`position-relative ${style.modalContent} bg-white mx-auto my-auto p-3 col-5 shadow rounded`}
@@ -129,12 +131,7 @@ const Modal: FC<ModalProps> = ({ setOpenModal }) => {
             <label className={`mt-4 ms-3 ${style.textCustom}`}>Activer</label>
           </div>
           <div className="mt-5 float-end">
-            <button
-              className={`me-5 ${style.cancel}`}
-              onClick={() => {
-                setOpenModal(false);
-              }}
-            >
+            <button className={`me-5 ${style.cancel}`} onClick={setCloseModal}>
               CANCEL
             </button>
             <button className={style.confirm} type="submit">
